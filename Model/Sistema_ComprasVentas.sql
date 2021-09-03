@@ -35,14 +35,5 @@ CREATE TABLE Usuario (
   INDEX Usuario_FKIndex3(Depto_idDepto)
 );
 
-CREATE TABLE Mensaje (
-  idMensaje INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Depto_idDepto INTEGER UNSIGNED NOT NULL,
-  Usuario_idUsuario INTEGER UNSIGNED NOT NULL,
-  Mensaje TEXT NULL,
-  PRIMARY KEY(idMensaje),
-  INDEX Mensaje_FKIndex1(Usuario_idUsuario),
-  INDEX Mensaje_FKIndex2(Depto_idDepto)
-);
 
 
