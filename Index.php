@@ -4,21 +4,21 @@
 
     require_once ('AutoLoad.php');
 
-    if(isset($_GET['controller']) && isset($_GET['method']))
+    if(isset($_GET['Controller']) && isset($_GET['method']))
     {
-        $controller=$_GET['controller'];
+        $Controller=$_GET['Controller'];
         $method=$_GET['method'];
     }
     else
     {
-       $controller="Home";
+       $Controller="Home";
        $method="Inicio";
     }
 
-    if(class_exists($controller) && method_exists($controller,$method))
+    if(class_exists($Controller) && method_exists($Controller,$method))
     {
 
-        $class=new $controller;
+        $class=new $Controller;
         $class->$method();
 
     }
