@@ -6,7 +6,7 @@
         $servidor="localhost";
         $user="root";
         $pass="";
-        $BaseDatos="Sistema_ComprasVentas";
+        $BaseDatos="ComprasVentas";
 
         parent:: __construct($servidor,$user,$pass,$BaseDatos);
         $this->query("SET NAMES 'utf8';");
