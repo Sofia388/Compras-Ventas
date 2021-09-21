@@ -7,7 +7,7 @@
 
     public function __construct()
     {
-      $this->user=new Usuarios();
+      $this->user=new Usuario();
       $this->smarty=new Smarty();
     }
 
@@ -23,6 +23,18 @@
       $this->smarty->display('Login.tpl');
     }
 
+    public function IrRegistro()
+    {
+      $this->smarty->assign('title','Registro');
+      $this->smarty->display('Registro.tpl');
+    }
+
+    public function RegresoJefe()
+    {
+      $this->smarty->assign('title','Inicio');
+      $this->smarty->display('VistasJefe/VistaJefe.tpl');
+    }
+
     public function Cerrar()
     {
       $this->smarty->assign('title','Inicio');
@@ -33,6 +45,18 @@
     {
       $this->smarty->assign('title','Inicio');
       $this->smarty->display('Cabeceras/Inicio.tpl');
+    }
+    
+    public function Compras()
+    {
+      $this->smarty->assign('title','Sueldo');
+      $this->smarty->display('VistasJefe/Compras.tpl');
+    }
+
+    public function Ventas()
+    {
+      $this->smarty->assign('title','Login');
+      $this->smarty->display('VistasJefe/Ventas.tpl');
     }
 
     public function BuscarUsuario()
@@ -50,18 +74,24 @@
           
               $_SESSION['idUsuario']=$usuario['Depto_idDepto'];
       
-             if($usuario['Depto_idDepto']==1)
+              if($usuario['Depto_idDepto']==101)
                 {
                   $this->smarty->assign('title','Login');
-                  $this->smarty->display('VistasVentas/DtpVentas.tpl');
+                  $this->smarty->display('VistasJefe/Compras.tpl');
                 }
-              else if($usuario['Depto_idDepto']==2)
+              else if($usuario['Depto_idDepto']==102)
                 {  
             
                   $this->smarty->assign('title','Login');
-                  $this->smarty->display('VistasAdmon/DtpAdmon.tpl');
+                  $this->smarty->display('VistasJefe/Ventas.tpl');
                 }
                
+                else if($usuario['Depto_idDepto']==123)
+                {  
+            
+                  $this->smarty->assign('title','Login');
+                  $this->smarty->display('VistasJefe/VistaJefe.tpl');
+                }
             }
             else 
               {
@@ -70,6 +100,7 @@
                 echo "Usuario o contraseña son incorrectos";
               }
     }
+   
 
     public function GuardarUsuario()
     {
