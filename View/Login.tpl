@@ -15,7 +15,7 @@
     <h1 align="center">Login</h1>
 </div>
     <div class="row">
-    <form  method="post" action="?Controller=User&method=BuscarUsuario" class="col s12">
+    <form  method="post" action="?Controller=User&method=BuscarUser" class="col s12">
 
     <div class="row" >
         <div class="input-field col s6 s2 row offset-s2 center aling" >
@@ -26,7 +26,7 @@
 
       <div class="row" class="center-align">
          <div class="input-field col s6 row offset-s2 center aling">
-             <input id="Depto_idDepto" type="Depto_idDepto" class="validate" name="Depto_idDepto" required=""/>
+             <input id="Depto_idDepto" type="text" class="validate" name="Depto_idDepto" required=""/>
              <label for="Depto_idDepto">Password</label>
             </div>
       </div>
