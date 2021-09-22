@@ -59,36 +59,35 @@
       $this->smarty->display('VistasJefe/Ventas.tpl');
     }
 
-    public function BuscarUsuario()
+    public function BuscarUser()
     {
-      $num=$_POST['idUsuario'];
+      $numUs=$_POST['idUsuario'];
       $pass=$_POST['Depto_idDepto'];
 
-      $us=$this->user->BuscarUser($num,$pass);
+      $us=$this->user->BuscarUser($numUs,$pass);
 
+           
             if($us->num_rows==1)
             {
               session_start();
               $usuario=mysqli_fetch_assoc($us);
 
-          
-              $_SESSION['idUsuario']=$usuario['Depto_idDepto'];
+              ///$_SESSION['DPI']=$numUs[`Codigo_u`];
+              $_SESSION['id']=$usuario['Depto_idDepto'];
       
-              if($usuario['Depto_idDepto']==101)
+              if($usuario['Depto_idDepto']==1)
                 {
                   $this->smarty->assign('title','Login');
                   $this->smarty->display('VistasJefe/Compras.tpl');
                 }
-              else if($usuario['Depto_idDepto']==102)
+              else if($usuario['Depto_idDepto']==2)
                 {  
             
                   $this->smarty->assign('title','Login');
                   $this->smarty->display('VistasJefe/Ventas.tpl');
                 }
-               
-                else if($usuario['Depto_idDepto']==123)
+              else if($usuario['Depto_idDepto']==123)
                 {  
-            
                   $this->smarty->assign('title','Login');
                   $this->smarty->display('VistasJefe/VistaJefe.tpl');
                 }
