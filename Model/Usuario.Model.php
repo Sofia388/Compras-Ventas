@@ -7,10 +7,10 @@
             $this->con=new Conexion();
         }
             
-        public function BuscarUser($num, $pass)
+        public function BuscarUser($numUs, $pass)
         {
             $this->con=new Conexion();
-            $sql="SELECT * FROM `trabajador` WHERE `Depto_idDepto` = '$num' AND `Contrasena`='$pass';";
+            $sql="SELECT * FROM `trabajador` WHERE `idUsuario` = '$numUs' AND `Depto_idDepto`='$pass';";
             $consulta=$this->con->query($sql);
             $this->con->close();
             return $consulta;

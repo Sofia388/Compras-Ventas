@@ -3,10 +3,10 @@
     {
         function __construct()
         {
-        $servidor="sql208.byethost10.com";
-        $user="b10_27746189";
-        $pass="XJLQkA_F8i5M9";
-        $BaseDatos="b10_27746189_ComprasVentas";
+        $servidor="localhost";
+        $user="root";
+        $pass="";
+        $BaseDatos="comprasventas";
 
         parent:: __construct($servidor,$user,$pass,$BaseDatos);
         $this->query("SET NAMES 'utf8';");
