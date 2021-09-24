@@ -2,7 +2,7 @@
 
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Bonificaciones</a>
+      <a href="#" class="brand-logo">cvalladares</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="?Controller=User&method=Cerrar">Cerrar</a></li>
         <li><a href="?Controller=User&method=RegresoJefe">Regresar</a></li>
@@ -11,19 +11,43 @@
   </nav>
 
   
-  <form method="post" action="?Controller=User&method=CrearBoni" class="col s12  center aling">
-    <h5>Crear Codigo Personal</h5>
+   <form method="post" action="?Controller=User&method=Pagoventa" class="col s12  center aling">
+    <h1>Ventas de ZES Corporation</h1>
 
     <div class="row">
         <div class="input-field col s6 s2 row offset-s2">
-          <input id="codUsBoni" type="text" class="validate" name="codUsBoni" required=""/>
-          <label for="codUsBoni">Codigo del Usuario</label>
+          <input id="Cliente" type="text" class="validate" name="Cliente" required=""/>
+          <label for="Cliente">Codigo de Clientes</label>
         </div>
     </div>
 
-    <div class="input-field col s6 s2 row offset-s2">
-     <input id="valboni" name="valboni" class="validate" requiered=""/>
-     <label for="valboni">Valor de la Bonificacion</label>
+    <div class="row">
+        <div class="input-field col s6 s2 row offset-s2">
+          <input id="fechapago" type="data" class="validate" name="fechapago" required=""/>
+          <label for="fechapago">Fecha de Venta</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s6 s2 row offset-s2">
+          <input id="horapago" type="text" class="validate" name="horapago" required=""/>
+          <label for="horapago">Hora de la venta</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s6 s2 row offset-s2">
+          <input id="nocheque" type="text" class="validate" name="nocheque" required=""/>
+          <label for="nocheque">Numero del Cheque o Recibo de Caja</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s6 s2 row offset-s2">
+          <input id="valcheque" type="text" class="validate" name="valcheque" required=""/>
+          <label for="valcheque">Valor del Cheque o Recibo de Caja</label>
+        </div>
+    </div>
 
          <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
   </form>

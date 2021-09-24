@@ -17,7 +17,7 @@
     <div class="row">
     <form  method="post" action="?Controller=User&method=BuscarUser" class="col s12">
 
-    <div class="row" >
+       <div class="row" >
         <div class="input-field col s6 s2 row offset-s2 center aling" >
           <input id="idUsuario" type="text" class="validate" name="idUsuario" required=""/>
           <label for="idUsuario">Usuario</label>
@@ -26,7 +26,7 @@
 
       <div class="row" class="center-align">
          <div class="input-field col s6 row offset-s2 center aling">
-             <input id="Depto_idDepto" type="text" class="validate" name="Depto_idDepto" required=""/>
+             <input id="Depto_idDepto" type="text" class="validate" name="pass" required=""/>
              <label for="Depto_idDepto">Password</label>
             </div>
       </div>
