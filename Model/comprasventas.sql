@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-09-2021 a las 04:42:53
+-- Tiempo de generación: 24-09-2021 a las 05:55:29
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 7.3.29
 
@@ -44,6 +44,34 @@ CREATE TABLE `estado` (
   `idEstado` int(10) UNSIGNED NOT NULL,
   `DardeBaja_2` varchar(50) DEFAULT NULL,
   `Motivo` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pagocompra`
+--
+
+CREATE TABLE `pagocompra` (
+  `Trabajador_Usuario` int(100) NOT NULL,
+  `Fecha` varchar(100) NOT NULL,
+  `Hora` varchar(100) NOT NULL,
+  `Cheque` varchar(100) NOT NULL,
+  `ValordeCheque` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pagoventa`
+--
+
+CREATE TABLE `pagoventa` (
+  `Trabajador_Usuario` int(100) NOT NULL,
+  `Fecha` varchar(100) NOT NULL,
+  `Hora` varchar(100) NOT NULL,
+  `Cheque` varchar(100) NOT NULL,
+  `ValordeCheque` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -97,6 +125,12 @@ ALTER TABLE `depto`
 --
 ALTER TABLE `estado`
   ADD PRIMARY KEY (`idEstado`);
+
+--
+-- Indices de la tabla `pagocompra`
+--
+ALTER TABLE `pagocompra`
+  ADD PRIMARY KEY (`Trabajador_Usuario`);
 
 --
 -- Indices de la tabla `roles`

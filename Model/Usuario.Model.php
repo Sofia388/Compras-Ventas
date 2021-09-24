@@ -7,10 +7,10 @@
             $this->con=new Conexion();
         }
             
-        public function BuscarUser($numUs, $pass)
+        public function BuscarUser($numU, $pass)
         {
             $this->con=new Conexion();
-            $sql="SELECT * FROM `trabajador` WHERE `idUsuario` = '$numUs' AND `Depto_idDepto`='$pass';";
+            $sql="SELECT * FROM `usuario` WHERE `idUsuario` = '$numU' AND `Depto_idDepto`='$pass';";
             $consulta=$this->con->query($sql);
             $this->con->close();
             return $consulta;
@@ -19,7 +19,7 @@
         public function GuardarUsuario($correo,$nombre,$apellido,$contrasena,$depto_idDepto)
             {
                 $this->con=new Conexion();
-                $sql="INSERT INTO `trabajador`(`idUsuario`, `Depto_idDepto`, `Estado_idEstado`, `Roles_idRoles`, `Nombre`, `Apellido`,`Correo`) VALUES ('$correo','$nombre','$apellido','$contrasena','$dDepto_idDepto');"; 
+                $sql="INSERT INTO `usuario`(`idUsuario`, `Depto_idDepto`, `Estado_idEstado`, `Roles_idRoles`, `Nombre`, `Apellido`,`Correo`) VALUES ('$correo','$nombre','$apellido','$contrasena','$dDepto_idDepto');";
                 $consulta=$this->con->query($sql);
                 $this->con->close();
                 return $consulta;
@@ -29,6 +29,26 @@
         {
             $this->con=new Conexion();
             $sql= "SELECT * FROM 'Sistema_Chat' WHERE 1 ;";
+            $consulta=$this->con->query($sql);
+            $this->con->close();
+            return $consulta;
+        }
+
+        public function Pagocompra($Proveedores,$fecha,$hora,$noCheque,$valorcheque)
+        {
+            $this->con=new Conexion();
+            $sql="INSERT INTO `pagocompra`(`Trabajador_Usuario`, `Fecha`, `Hora`, `Cheque`, `ValordeCheque`) VALUES ('$Proveedores','$fecha','$hora','$noCheque','$valorcheque');";
+            $consulta=$this->con->query($sql);
+            $this->con->close();
+            return $consulta;
+        }
+
+       
+        
+        public function Pagoventa($Cliente,$fecha,$hora,$noCheque,$valorcheque)
+        {
+            $this->con=new Conexion();
+            $sql="INSERT INTO `pagoventa`(`Trabajador_Usuarios`, `Fecha`, `Hora`, `Cheque`, `ValordeCheque`) VALUES ('$Cliente','$fecha','$hora','$noCheque','$valorcheque');";
             $consulta=$this->con->query($sql);
             $this->con->close();
             return $consulta;
