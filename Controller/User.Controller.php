@@ -53,18 +53,30 @@
       $this->smarty->display('VistasJefe/Compras.tpl');
     }
 
+    public function Compra()
+    {
+      $this->smarty->assign('title','Compra');
+      $this->smarty->display('VistasJefe/Compras.tpl');
+    }
+
     public function Ventas()
     {
       $this->smarty->assign('title','Login');
       $this->smarty->display('VistasJefe/Ventas.tpl');
     }
 
+    public function Venta()
+    {
+      $this->smarty->assign('title','Venta');
+      $this->smarty->display('VistasJefe/Ventas.tpl');
+    }
+
     public function BuscarUser()
     {
-      $numUs=$_POST['idUsuario'];
-      $pass=$_POST['Depto_idDepto'];
+      $numU=$_POST['idUsuario'];
+      $pass=$_POST['pass'];
 
-      $us=$this->user->BuscarUser($numUs,$pass);
+      $us=$this->user->BuscarUser($numU,$pass);
 
            
             if($us->num_rows==1)
@@ -98,6 +110,34 @@
                 $this->smarty->display('Login.tpl');
                 echo "Usuario o contraseña son incorrectos";
               }
+    }
+    public function Pagocompra()
+    {
+      $Proveedores=$_POST['Proveedores'];
+      $fecha=$_POST['fechapago'];
+      $hora=$_POST['horapago'];
+      $noCheque=$_POST['nocheque'];
+      $valorcheque=$_POST['valcheque'];
+      
+      $userPago=$this->user->Pagocompra($Proveedores,$fecha,$hora,$noCheque,$valorcheque);
+
+      $this->smarty->assign('title','Compra');
+      $this->smarty->display('VistasJefe/Compras.tpl');
+
+    }
+     public function Pagoventa()
+    {
+      $Cliente=$_POST['Cliente'];
+      $fecha=$_POST['fechapago'];
+      $hora=$_POST['horapago'];
+      $noCheque=$_POST['nocheque'];
+      $valorcheque=$_POST['valcheque'];
+      
+      $userPago=$this->user->Pagoventa($Cliente,$fecha,$hora,$noCheque,$valorcheque);
+
+      $this->smarty->assign('title','Venta');
+      $this->smarty->display('VistasJefe/Ventas.tpl');
+
     }
    
 
