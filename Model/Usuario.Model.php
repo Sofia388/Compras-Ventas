@@ -55,6 +55,26 @@
         }
 
 
+         public function CrearCodigo($Codigo, $Cliente)
+        {
+            $this->con=new Conexion();
+            $sql="INSERT INTO `cliente` (`Codigo`, `Cliente`) VALUES ('$Codigo','$Cliente');";
+            $consulta=$this->con->query($sql);
+            $this->con->close();
+            return $consulta;
+        }
+         
+
+         public function CrearCodigop($Codigo, $Proveedores)
+        {
+            $this->con=new Conexion();
+            $sql="INSERT INTO `proveedores` (`Codigo`, `Proveedores`) VALUES ('$Codigo','$Proveedores');";
+            $consulta=$this->con->query($sql);
+            $this->con->close();
+            return $consulta;
+        }
+
+
  }
 
 
