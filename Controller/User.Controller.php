@@ -59,6 +59,13 @@
       $this->smarty->display('VistasJefe/Compras.tpl');
     }
 
+
+    public function Proveedores()
+    {
+      $this->smarty->assign('title','Login');
+      $this->smarty->display('VistasJefe/Proveedores.tpl');
+    }
+
     public function Ventas()
     {
       $this->smarty->assign('title','Login');
@@ -69,6 +76,12 @@
     {
       $this->smarty->assign('title','Venta');
       $this->smarty->display('VistasJefe/Ventas.tpl');
+    } 
+
+    public function Clientes()
+    {
+      $this->smarty->assign('title','Login');
+      $this->smarty->display('VistasJefe/Clientes.tpl');
     }
 
     public function BuscarUser()
@@ -125,6 +138,31 @@
       $this->smarty->display('VistasJefe/Compras.tpl');
 
     }
+
+    
+    public function CrearCodigo()
+    {
+      $Codigo=$_POST['cod'];
+      $Cliente=$_POST['cli'];
+
+      $user=$this->user->CrearCodigo($Codigo, $Cliente);
+
+      $this->smarty->assign('title','Venta');
+      $this->smarty->display('VistasJefe/Ventas.tpl');
+    }
+
+     public function CrearCodigop()
+    {
+      $Codigo=$_POST['codi'];
+      $Proveedores=$_POST['pro'];
+
+      $user=$this->user->CrearCodigop($Codigo, $Proveedores);
+
+      $this->smarty->assign('title','Compra');
+      $this->smarty->display('VistasJefe/Compras.tpl');
+    }
+
+
      public function Pagoventa()
     {
       $Cliente=$_POST['Cliente'];
