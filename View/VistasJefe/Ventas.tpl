@@ -4,6 +4,7 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">cvalladares</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="?Controller=User&method=Clientes">Clientes</a></li>
         <li><a href="?Controller=User&method=Cerrar">Cerrar</a></li>
         <li><a href="?Controller=User&method=RegresoJefe">Regresar</a></li>
       </ul>
@@ -23,14 +24,14 @@
 
     <div class="row">
         <div class="input-field col s6 s2 row offset-s2">
-          <input id="fechapago" type="data" class="validate" name="fechapago" required=""/>
+          <input id="fechapago" type="date" class="validate" name="fechapago" required=""/>
           <label for="fechapago">Fecha de Venta</label>
         </div>
     </div>
 
     <div class="row">
         <div class="input-field col s6 s2 row offset-s2">
-          <input id="horapago" type="text" class="validate" name="horapago" required=""/>
+          <input id="horapago" type="time" class="validate" name="horapago" required=""/>
           <label for="horapago">Hora de la venta</label>
         </div>
     </div>
